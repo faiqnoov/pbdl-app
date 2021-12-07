@@ -1,42 +1,29 @@
 <template>
   <div class="task-container">
     <h3>To Do</h3>
-    <!-- <div v-for="task in tasks" v-bind:key="task._id">
-    </div> -->
-    <div
+    <TaskItem
       v-for="task in todoTask"
       v-bind:key="task._id"
-      class="todo"
-      style="background-color: gray"
-    >
-      <ul>
-        <li>Matkul: {{ task.matkul }}</li>
-        <li>Deskripsi: {{ task.deskripsi }}</li>
-        <li>Deadline: {{ task.deadline }}</li>
-        <li>Pengumpulan: {{ task.pengumpulan }}</li>
-        <li>Status: {{ task.status }}</li>
-      </ul>
-    </div>
+      v-bind:task="task"
+    />
+
     <h3>Completed</h3>
-    <div
+    <TaskItem
       v-for="task in completedTask"
       v-bind:key="task._id"
-      class="complete"
-      style="background-color: green"
-    >
-      <ul>
-        <li>Matkul: {{ task.matkul }}</li>
-        <li>Deskripsi: {{ task.deskripsi }}</li>
-        <li>Deadline: {{ task.deadline }}</li>
-        <li>Pengumpulan: {{ task.pengumpulan }}</li>
-        <li>Status: {{ task.status }}</li>
-      </ul>
-    </div>
+      v-bind:task="task"
+    />
   </div>
 </template>
 
 <script>
+import Vue from "vue";
+import TaskItem from "./TaskItem.vue";
+
 export default {
+  components: {
+    TaskItem,
+  },
   props: ["tasks"],
   data() {
     return {};

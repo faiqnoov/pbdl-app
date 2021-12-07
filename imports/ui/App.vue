@@ -30,7 +30,7 @@ export default {
           deskripsi: "Hipotesis",
           deadline: "2021/12/17",
           pengumpulan: "ethol",
-          status: true,
+          status: false,
         },
         {
           _id: 2,
