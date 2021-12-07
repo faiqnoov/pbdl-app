@@ -3,7 +3,10 @@
     <header>
       <h1>Tugasku</h1>
     </header>
-    <Task v-for="task in getTasks()" v-bind:key="task._id" v-bind:task="task" />
+    <main>
+      <!-- <Task v-for="task in getTasks()" v-bind:key="task._id" v-bind:task="task" /> -->
+      <Task v-bind:tasks="getTasks()" />
+    </main>
   </div>
 </template>
 
@@ -27,7 +30,7 @@ export default {
           deskripsi: "Hipotesis",
           deadline: "2021/12/17",
           pengumpulan: "ethol",
-          status: false,
+          status: true,
         },
         {
           _id: 2,
@@ -35,7 +38,7 @@ export default {
           deskripsi: "Static Routing",
           deadline: "2021/12/30",
           pengumpulan: "classroom",
-          status: true,
+          status: false,
         },
         {
           _id: 3,
