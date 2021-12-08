@@ -7,6 +7,13 @@
       v-bind:task="task"
     />
 
+    <h3>In Progress</h3>
+    <TaskItem
+      v-for="task in progressTask"
+      v-bind:key="task._id"
+      v-bind:task="task"
+    />
+
     <h3>Completed</h3>
     <TaskItem
       v-for="task in completedTask"
@@ -31,12 +38,17 @@ export default {
   computed: {
     todoTask: function () {
       return this.tasks.filter(function (task) {
-        return task.status == false;
+        return task.status == "todo";
+      });
+    },
+    progressTask: function () {
+      return this.tasks.filter(function (task) {
+        return task.status == "progress";
       });
     },
     completedTask: function () {
       return this.tasks.filter(function (task) {
-        return task.status == true;
+        return task.status == "done";
       });
     },
   },

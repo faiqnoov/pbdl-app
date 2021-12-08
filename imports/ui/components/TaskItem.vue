@@ -18,3 +18,12 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.task-item {
+  border: 1px solid #000;
+  width: 300px;
+  margin-bottom: 10px;
+  padding-right: 20px;
+}
+</style>
