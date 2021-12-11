@@ -27,9 +27,8 @@ export default {
   methods: {},
   meteor: {
     getTasks() {
-      return TasksCollection.find({}).fetch();
-      // show newest task first
-      // return TasksCollection.find({}, { sort: { createdAt: -1 } }).fetch();
+      // show latest modified task first
+      return TasksCollection.find({}, { sort: { dateModified: -1 } }).fetch();
     },
   },
 };
