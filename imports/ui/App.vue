@@ -4,7 +4,7 @@
       <h1>Task Manager</h1>
     </header>
     <main>
-      <!-- <Task v-for="task in getTasks()" v-bind:key="task._id" v-bind:task="task" /> -->
+      <TaskForm />
       <Task v-bind:tasks="getTasks" />
     </main>
   </div>
@@ -13,11 +13,13 @@
 <script>
 import Vue from "vue";
 import Task from "./components/Task.vue";
+import TaskForm from "./components/TaskForm.vue";
 import { TasksCollection } from "../api/TasksCollection";
 
 export default {
   components: {
     Task,
+    TaskForm,
   },
   data() {
     return {};
@@ -26,8 +28,10 @@ export default {
   meteor: {
     getTasks() {
       return TasksCollection.find({}).fetch();
-    }
-  }
+      // show newest task first
+      // return TasksCollection.find({}, { sort: { createdAt: -1 } }).fetch();
+    },
+  },
 };
 </script>
 
