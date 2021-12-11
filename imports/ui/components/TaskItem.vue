@@ -6,7 +6,13 @@
       <li>Deadline: {{ task.deadline }}</li>
       <li>
         Pengumpulan:
-        <a v-bind:href="task.link" target="_blank">{{ task.pengumpulan }}</a>
+        <a
+          v-if="task.link.length > 1"
+          v-bind:href="task.link"
+          target="_blank"
+          >{{ task.pengumpulan }}</a
+        >
+        <span v-else>{{ task.pengumpulan }}</span>
       </li>
       <li>Status: {{ task.status }}</li>
     </ul>
@@ -73,7 +79,9 @@ export default {
       });
     },
     deleteTask() {
-      TasksCollection.remove(this.task._id);
+      if (confirm("Apakah kamu yakin akan menghapus data?")) {
+        TasksCollection.remove(this.task._id);
+      }
     },
   },
 };
