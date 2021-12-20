@@ -1,25 +1,31 @@
 <template>
-  <div class="task-container">
-    <h3>To Do</h3>
-    <TaskItem
-      v-for="task in todoTask"
-      v-bind:key="task._id"
-      v-bind:task="task"
-    />
+  <div class="task-container row row-cols-1 row-cols-md-3">
+    <div class="task-group">
+      <h3>To Do</h3>
+      <TaskItem
+        v-for="task in todoTask"
+        v-bind:key="task._id"
+        v-bind:task="task"
+      />
+    </div>
 
-    <h3>In Progress</h3>
-    <TaskItem
-      v-for="task in progressTask"
-      v-bind:key="task._id"
-      v-bind:task="task"
-    />
+    <div class="task-group">
+      <h3>In Progress</h3>
+      <TaskItem
+        v-for="task in progressTask"
+        v-bind:key="task._id"
+        v-bind:task="task"
+      />
+    </div>
 
-    <h3>Completed</h3>
-    <TaskItem
-      v-for="task in completedTask"
-      v-bind:key="task._id"
-      v-bind:task="task"
-    />
+    <div class="task-group">
+      <h3>Completed</h3>
+      <TaskItem
+        v-for="task in completedTask"
+        v-bind:key="task._id"
+        v-bind:task="task"
+      />
+    </div>
   </div>
 </template>
 

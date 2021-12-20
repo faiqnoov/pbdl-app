@@ -8,6 +8,9 @@ import VueMeteorTracker from 'vue-meteor-tracker';
 
 Vue.use(VueMeteorTracker);
 
+// import bootstrap from 'bootstrap';
+import "bootstrap/dist/css/bootstrap.min.css";
+
 Meteor.startup(() => {
   new Vue({
     el: '#app',
