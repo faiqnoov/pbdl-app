@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <header>
-      <h1>NugasKuy</h1>
+      <h1 class="text-center">NugasKuy</h1>
     </header>
     <main>
       <TaskForm />
@@ -52,6 +52,10 @@ body {
   background-color: var(--c1);
   color: var(--cText);
   font-family: "Poppins", sans-serif;
+}
+
+header {
+  height: 100px;
 }
 
 header h1 {
