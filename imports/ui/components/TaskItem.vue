@@ -156,4 +156,8 @@ button {
 .delete {
   margin-left: 30px;
 }
+
+.btn:hover {
+  color: var(--cText);
+}
 </style>

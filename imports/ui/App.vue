@@ -1,7 +1,9 @@
 <template>
   <div class="container">
-    <header>
-      <h1 class="text-center">NugasKuy</h1>
+    <header class="row align-items-center">
+      <div class="col">
+        <h1 class="text-center">NugasKuy</h1>
+      </div>
     </header>
     <main>
       <TaskForm />
@@ -55,7 +57,7 @@ body {
 }
 
 header {
-  height: 100px;
+  height: 180px;
 }
 
 header h1 {
